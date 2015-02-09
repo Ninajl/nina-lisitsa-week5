@@ -1,0 +1,30 @@
+<div class=page-header>
+  <div class=pull-right>
+    <%= link_to 'Create', new_location_path, class: 'btn btn-primary' %>
+  </div>
+  <center><h1>Locations</h1></center>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Zipcode</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @locations.each do |location| %>
+    <tr>
+    <td><%= link_to location.name, location_path(location) %></td>
+    <td><%= location.address %></td>
+    <td><%= location.zipcode %></td>
+    <td><div class=pull-right>
+      <%= link_to 'Destroy', location, method: :delete, date: {confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
+      <%= link_to 'Edit',  %>
+    </tr>
+    <% end %>
+  </tbody>
+
+</table>
